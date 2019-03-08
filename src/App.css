@@ -1,1 +1,48 @@
+body{
+  background-image: url('./assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100%;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+h1{
+  font-family: 'Dosis', sans-serif;
+}
+
+/* Sticky footer */
+html, body { 
+    height: 100%; 
+    margin: 0;
+}
+
+.Site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.Site-content {
+  flex: 1;
+}
+
+/* Loading icon */
+.loader{
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+@keyframes spin{
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+
 

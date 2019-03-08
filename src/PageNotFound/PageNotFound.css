@@ -1,0 +1,11 @@
+.page-not-found a{
+	border-bottom: 1px dotted;
+    cursor: pointer;
+}
+
+.page-not-found hr{
+	border: 1px solid;
+    width: 70px;
+    margin: 0;
+    margin-bottom: 1rem;
+}

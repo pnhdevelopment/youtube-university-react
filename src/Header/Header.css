@@ -1,0 +1,57 @@
+nav{
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav .logo{
+	width: 180px;
+}
+
+nav .navbar-dark .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+	
+nav .navbar-dark .navbar-toggler{
+	border-color: rgba(255, 255, 255, 1.0);
+}
+
+nav #wrapper{
+	cursor: pointer;
+}
+
+nav .circle{
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+
+nav .line{
+	position: absolute;
+	height: 6px;
+	width: 100%;
+	background: white;
+	border-radius: 8px;
+	transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+	
+nav .top{
+	top: 18%;
+}
+
+nav .middle{
+	top: 48%;
+}
+
+nav .bottom{
+	top: 78%;
+}
+
+nav .icon.closed .top{
+	transform: rotate(45deg);
+	top: 48%;
+}
+
+nav .icon.closed .middle, nav .icon.closed .bottom{
+	transform: rotate(-45deg);
+	top: 48%;
+}
+	

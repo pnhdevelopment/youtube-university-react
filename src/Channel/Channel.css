@@ -1,0 +1,44 @@
+.channel-wrapper .wrapper{
+	width: 100%;
+	background: #1f1f1f;
+	padding-bottom: 56.25%;
+	position: relative;
+}
+
+.channel-wrapper img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.channel-wrapper img:hover{
+	opacity: 0.5 !important;
+}
+
+.channel-wrapper hr{
+	border: 1px solid;
+    width: 70px;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.channel-wrapper a h2, .channel-wrapper a h2:hover, .channel-wrapper a span, .channel-wrapper a span:hover, .channel-wrapper a small, .channel-wrapper a small:hover{
+	color: black;
+}
+
+.channel-wrapper a h2{
+	font-size: 1.1rem;
+}
+
+.channel-wrapper a{
+	text-decoration: none;
+}
+
+.channel-wrapper .fa, .channel-wrapper .far, .channel-wrapper .fas{
+	color: black;
+    margin-right: 0.5rem;
+}
+    
