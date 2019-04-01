@@ -20,7 +20,7 @@ class Footer extends Component {
 
           <div className="row">
             <div className="col-md-8 col-12 text-center text-md-left">
-              &copy; 2018 Youtube University 
+              &copy; { new Date().getFullYear() } Youtube University 
             </div>
             
             <div className="col-md-4 col-12 text-center text-md-right">
