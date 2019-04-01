@@ -87,7 +87,11 @@ class Search extends Component {
               <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={item.id.videoId}>
                 <Link to={`/video/${item.id.videoId}`}>
                   <div className="wrapper mb-2">
-                    <img onLoad={this.imageFadeIn} src={item.snippet.thumbnails.medium.url} />
+                    <img
+                      onLoad={this.imageFadeIn}
+                      src={item.snippet.thumbnails.medium.url}
+                      alt={item.snippet.title}
+                    />
                   </div>
 
                   <h2 className="mb-0">{item.snippet.title}</h2>

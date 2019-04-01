@@ -95,7 +95,11 @@ class Home extends Component {
               <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={channel.id}>
                 <Link to={`/channel/${channel.snippet.customUrl}/${channel.id}`} >
                   <div className="wrapper">
-                    <img src={channel.snippet.thumbnails.medium.url} onLoad={this.imageFadeIn} />
+                    <img
+                      src={channel.snippet.thumbnails.medium.url}
+                      onLoad={this.imageFadeIn}
+                      alt={channel.snippet.title}
+                    />
                     <h1>{channel.snippet.title}</h1>
                   </div>
                 </Link>
@@ -110,7 +114,11 @@ class Home extends Component {
               <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={channel.id}>
                 <Link to={`/channel/${channel.snippet.customUrl}/${channel.id}`}>
                   <div className="wrapper">
-                    <img src={channel.snippet.thumbnails.medium.url} onLoad={this.imageFadeIn} />
+                    <img
+                      src={channel.snippet.thumbnails.medium.url}
+                      onLoad={this.imageFadeIn}
+                      alt={channel.snippet.title}
+                    />
                     <h1>{channel.snippet.title}</h1>
                   </div>
                 </Link>
