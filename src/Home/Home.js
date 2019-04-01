@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
@@ -86,6 +87,15 @@ class Home extends Component {
       return <div className="loader"></div>;
     } else {
       return (
+      <React.Fragment>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Youtube University</title>
+            <meta name="description" content="A collection of web design and web development tutorials." />
+            <meta name="author" content="pnhdevelopment" />
+            <meta name="keywords" content="Web design, Web development" />
+        </Helmet>
+
         <section className="home container-fluid">
 
           <h1>Web design</h1>
@@ -126,8 +136,8 @@ class Home extends Component {
             ))}
 
           </div>
-
         </section>
+      </React.Fragment>
       );
     }
   }

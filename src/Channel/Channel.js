@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
@@ -63,29 +64,36 @@ class Channel extends Component {
       return <div className="loader"></div>;
     } else {
       return (
-        <section className="container-fluid channel-wrapper">
-          <h1>{channelItems[0].snippet.channelTitle}</h1>
-          <hr />
-          <div className="row">
-            {channelItems.map(item => (
-              <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={item.id.videoId}>
-                <Link to={`/video/${item.id.videoId}`}>
-                  <div className="wrapper mb-2">
-                    <img
-                      onLoad={this.imageFadeIn}
-                      src={item.snippet.thumbnails.medium.url}
-                      alt={item.snippet.title}
-                    />
-                  </div>
+        <React.Fragment>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>{channelItems[0].snippet.channelTitle + ' - Youtube University'}</title>
+          </Helmet>
 
-                  <h2 className="mb-0">{item.snippet.title}</h2>
-                  <i className="far fa-calendar-alt"></i>
-                  <small>{ new Date(item.snippet.publishedAt).toLocaleString('en-us', { day: 'numeric', month: 'long',year: 'numeric' }) }</small>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
+          <section className="container-fluid channel-wrapper">
+            <h1>{channelItems[0].snippet.channelTitle}</h1>
+            <hr />
+            <div className="row">
+              {channelItems.map(item => (
+                <div className="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" key={item.id.videoId}>
+                  <Link to={`/video/${item.id.videoId}`}>
+                    <div className="wrapper mb-2">
+                      <img
+                        onLoad={this.imageFadeIn}
+                        src={item.snippet.thumbnails.medium.url}
+                        alt={item.snippet.title}
+                      />
+                    </div>
+
+                    <h2 className="mb-0">{item.snippet.title}</h2>
+                    <i className="far fa-calendar-alt"></i>
+                    <small>{ new Date(item.snippet.publishedAt).toLocaleString('en-us', { day: 'numeric', month: 'long',year: 'numeric' }) }</small>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+        </React.Fragment>
       );
     }
 

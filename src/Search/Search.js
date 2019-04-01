@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import queryString from 'query-string';
-
+import { Helmet } from "react-helmet";
 import { createBrowserHistory } from 'history';
 
 
@@ -79,6 +79,12 @@ class Search extends Component {
       return <div className="loader"></div>;
     } else {
       return (
+      <React.Fragment>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{'Search results for "' + q +  '" - Youtube University'}</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <section className="container-fluid channel-wrapper">
           <h1>Search results for "{q}"</h1>
           <hr />
@@ -102,6 +108,7 @@ class Search extends Component {
             ))}
           </div>
         </section>
+      </React.Fragment>
       );
     }
 

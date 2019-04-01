@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Helmet } from "react-helmet";
 
 import './Video.css';
 
@@ -49,6 +50,15 @@ class Video extends Component {
           return <div className="loader"></div>;
         } else {
           return(
+          <React.Fragment>
+            <Helmet>
+              <meta charSet="utf-8" />
+              <title>{videoItem.snippet.title + ' - Youtube University'}</title>
+              <meta name="description" content={videoItem.snippet.title} />
+              <meta name="author" content="pnhdevelopment" />
+              <meta name="keywords" content="Youtube, University, Web development, Web design" />
+            </Helmet>
+
             <section className="col-8 m-auto video-wrapper">  
 
               <h1 className="text-center">{videoItem.snippet.title}</h1>
@@ -56,7 +66,7 @@ class Video extends Component {
               <div className="embed-responsive embed-responsive-16by9 mb-3">
                 <iframe className="embed-responsive-item"
                 src={`https://www.youtube.com/embed/${videoItem.id}`}
-                allowfullscreen></iframe>
+                allowFullScreen></iframe>
               </div>
               
               <div className="mb-2">
@@ -73,11 +83,12 @@ class Video extends Component {
                 {videoItem.snippet.description}
               </div>
               
-              {videoItem.snippet.tags.map(tag => (
-                <span className="tag">{tag}</span>
+              {videoItem.snippet.tags.map((tag, index) => (
+                <span className="tag" key={index}>{tag}</span>
               ))}
 
             </section>
+          </React.Fragment>
           )
         }
 
