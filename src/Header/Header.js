@@ -16,7 +16,10 @@ class Header extends Component {
   }
 
   toggleButton(el){
-    el.target.classList.toggle("closed");
+    document.querySelector('.circle.icon').classList.toggle("closed");
+
+    // el.target.classList.toggle("closed");
+    document.querySelector('#mobileNavbar').classList.toggle("reveal");
   }
 
   handleSubmit(e){
@@ -29,30 +32,47 @@ class Header extends Component {
 
   render() {
       return (
-        <nav className="navbar navbar-expand-lg mb-3 navbar-dark">
-          <Link to="/">
-           <img className="logo" src={logo} />
-          </Link>
+        <div className="mb-3" id="navWrapper">
+          <nav className="navbar navbar-expand-lg navbar-dark">
+            <Link to="/">
+             <img className="logo" src={logo} />
+            </Link>
 
-           <div id="wrapper" className="d-lg-none" onClick={this.toggleButton}>
-            <div className="circle icon">
-              <span className="line top"></span>
-              <span className="line middle"></span>
-              <span className="line bottom"></span>
+             <div id="wrapper" className="d-lg-none" onClick={this.toggleButton} >
+              <div className="circle icon">
+                <span className="line top"></span>
+                <span className="line middle"></span>
+                <span className="line bottom"></span>
+              </div>
             </div>
-          </div>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="ml-auto d-lg-inline-block d-none" id="navbarSupportedContent">
+              <form className="form-inline my-2 my-lg-0 ml-auto" onSubmit={this.handleSubmit.bind(this)}>
+                <input
+                  className="form-control mr-sm-2"
+                  type="search" placeholder="Search" aria-label="Search"
+                  name="q"
+                />
+                <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+            
+          </nav>
 
-            <form className="form-inline my-2 my-lg-0 ml-auto" onSubmit={this.handleSubmit.bind(this)} >
+
+          {/* Mobile nav menu */}
+          <div id="mobileNavbar" className="d-lg-none">
+            <form className="w-100 p-3 my-2 my-lg-0" onSubmit={this.handleSubmit.bind(this)}>
               <input
-                className="form-control mr-sm-2"
-                type="search" placeholder="Search"
-                name="q" />
+                className="form-control mb-2 mr-sm-2"
+                type="search" placeholder="Search" aria-label="Search"
+                name="q"
+                />
               <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
-        </nav>
+        </div>
+
       );
   }
 

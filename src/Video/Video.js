@@ -59,7 +59,7 @@ class Video extends Component {
               <meta name="keywords" content="Youtube, University, Web development, Web design" />
             </Helmet>
 
-            <section className="col-8 m-auto video-wrapper">  
+            <section className="col-12 col-lg-8 m-auto video-wrapper">  
 
               <h1 className="text-center">{videoItem.snippet.title}</h1>
 
@@ -91,10 +91,6 @@ class Video extends Component {
           </React.Fragment>
           )
         }
-
-
-
-
 
   }
 

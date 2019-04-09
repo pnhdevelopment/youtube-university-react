@@ -110,7 +110,7 @@ class Home extends Component {
                       onLoad={this.imageFadeIn}
                       alt={channel.snippet.title}
                     />
-                    <h1>{channel.snippet.title}</h1>
+                    <h1 className="d-none d-md-inline-block">{channel.snippet.title}</h1>
                   </div>
                 </Link>
               </div>
@@ -129,7 +129,7 @@ class Home extends Component {
                       onLoad={this.imageFadeIn}
                       alt={channel.snippet.title}
                     />
-                    <h1>{channel.snippet.title}</h1>
+                    <h1 className="d-none d-md-inline-block">{channel.snippet.title}</h1>
                   </div>
                 </Link>
               </div>

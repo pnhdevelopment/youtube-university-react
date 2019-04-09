@@ -7,6 +7,7 @@ body{
   min-height: 100%;
   background-attachment: fixed;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 h1{
